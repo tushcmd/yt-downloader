@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube Video Downloader</title>
+  </head>
+  <body>
+    <input type="text" id="videoUrl" placeholder="Enter YouTube video URL" />
+    <button onclick="downloadVideo()">Download</button>
+
+    <script>
+      function downloadVideo() {
+        const videoUrl = document.getElementById('videoUrl').value;
+        const serverUrl = `/download?url=${encodeURIComponent(videoUrl)}`;
+
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = serverUrl;
+
+        // Simulate a click event to trigger the download
+        link.setAttribute('download', '');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+  </body>
+</html>
