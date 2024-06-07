@@ -9,10 +9,9 @@
 
     <script>
       function downloadVideo() {
-        const videoUrl = document.getElementById('videoUrl').value;
-        const serverUrl = `/download?url=${encodeURIComponent(videoUrl)}`;
+       
 
-        // Create a temporary link element  here
+        // Create a temporary link element
         const link = document.createElement('a');
         link.href = serverUrl;
 
